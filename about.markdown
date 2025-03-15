@@ -4,15 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Welcome to Hverland. This site is dedicated to the geography, history, culture, and natural environment of the Hverland nation. Hverland is a fictional country created by Peter Grund for the purposes of worldbuilding and storytelling. The content on this site is a work of fiction and does not represent any real-world locations or events. This project was inspired by an 8th grade geography assignment in Lori Blomquist's class and has since grown into a full-fledged worldbuilding endeavor.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Hengelo_%28GLD%29_vlag_1962.svg" height=100 alt="Alternative text here">
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+*Flag of Hverland*
