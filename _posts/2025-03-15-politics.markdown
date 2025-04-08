@@ -2,7 +2,7 @@
 layout: post
 title:  "Politics"
 date:   2025-03-25 12:04:59 -0500
-categories: jekyll update
+categories: about
 ---
 
 ## Introduction
