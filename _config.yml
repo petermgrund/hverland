@@ -29,6 +29,14 @@ url: "https://hverland.petermgrund.com"
 #twitter_username: jekyllrb
 github_username:  petermgrund
 
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+  about:
+    output: true
+    permalink: /about/:title
+
 # Build settings
 theme: minima
 plugins:
