@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: pages/
+permalink: wiki/
 ---
 
 {% assign pages_with_category = site.about | where_exp: "item", "item.category" %}

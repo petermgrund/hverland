@@ -35,7 +35,7 @@ collections:
     permalink: /:categories/:year/:month/:day/:title/
   about:
     output: true
-    permalink: /about/:title
+    permalink: /wiki/:title
 
 # Build settings
 theme: minima

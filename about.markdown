@@ -9,3 +9,9 @@ Welcome to Hverland. This site is dedicated to the geography, history, culture, 
 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Hengelo_%28GLD%29_vlag_1962.svg" height=100 alt="Alternative text here">
 
 *Flag of Hverland*
+
+## Resources
+
+Start here to learn more about Hverland:
+* [Wiki](/wiki)
+* [News](/)

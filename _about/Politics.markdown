@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: page
 title:  "Politics"
 category: Politics
-permalink: /about/politics
+permalink: /wiki/politics
 ---
 
 ## Introduction
