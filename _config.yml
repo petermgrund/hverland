@@ -32,7 +32,7 @@ github_username:  petermgrund
 collections:
   posts:
     output: true
-    permalink: /:categories/:year/:month/:day/:title/
+    permalink: /:categories/:title/
   about:
     output: true
     permalink: /wiki/:title
