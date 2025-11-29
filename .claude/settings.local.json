@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(bundle exec jekyll serve:*)",
+      "Bash(npm run build:js:*)",
+      "Bash(if [ -f .gitignore ])",
+      "Bash(then grep -q \"node_modules\" .gitignore)",
+      "Bash(.gitignore)",
+      "Bash(else echo \"node_modules/\")",
+      "Bash(fi)",
+      "Bash(cat:*)",
+      "Bash(npm run build:css:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

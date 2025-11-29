@@ -1,0 +1,29 @@
+{
+  "name": "hverland",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "sass _sass/govuk-main.scss assets/css/govuk.css --style=compressed",
+    "build:assets": "mkdir -p assets/govuk-frontend && cp -R node_modules/govuk-frontend/dist/govuk/assets assets/govuk-frontend/",
+    "build:js": "mkdir -p assets/js && cp node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js assets/js/",
+    "build": "npm run build:css && npm run build:assets && npm run build:js",
+    "watch:css": "sass _sass/govuk-main.scss assets/css/govuk.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petermgrund/hverland.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/petermgrund/hverland/issues"
+  },
+  "homepage": "https://github.com/petermgrund/hverland#readme",
+  "devDependencies": {
+    "govuk-frontend": "^5.13.0",
+    "sass": "^1.94.2"
+  }
+}

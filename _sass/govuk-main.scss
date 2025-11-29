@@ -1,0 +1,7 @@
+// Import GOV.UK Frontend
+$govuk-assets-path: "/assets/govuk-frontend/assets/";
+$govuk-fonts-path: "/assets/govuk-frontend/assets/fonts/";
+$govuk-images-path: "/assets/govuk-frontend/assets/images/";
+
+// Import all GOV.UK Frontend styles
+@import "../node_modules/govuk-frontend/dist/govuk/all";

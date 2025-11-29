@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+<!-- Hero Section -->
+<section class="fs-hero">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="fs-hero-lead">{{ page.description }}</p>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Main Content -->
+<article class="page">
+  <div class="page-content">
+    {{ content }}
+  </div>
+</article>
+
+<style>
+/* Fresh Start Hero Section */
+.fs-hero {
+  background: linear-gradient(120deg, #00d084 0%, #00b870 50%, #1d70b8 100%);
+  padding: 60px 0;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.fs-hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.fs-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -50px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(29,112,184,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.fs-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.fs-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: white;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+.fs-hero-lead {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  opacity: 1;
+  color: white;
+  line-height: 1.6;
+  max-width: 650px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .fs-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .fs-hero-lead {
+    font-size: 1.05rem;
+  }
+}
+</style>

@@ -1,0 +1,221 @@
+---
+layout: default
+---
+{% assign govuk = site.data.govuk %}
+
+<article class="govuk-width-container app-document">
+  <!-- Phase banner or skip link if needed -->
+  <div class="govuk-phase-banner">
+    <!-- Optional, but common on GOV.UK -->
+  </div>
+
+  <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+    <!-- Publication title and caption -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <span class="govuk-caption-l govuk-!-margin-bottom-2">{{ page.publication_type | default: "Policy paper" }}</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">{{ page.title | escape }}</h1>
+        {% if page.subtitle %}
+          <p class="govuk-heading-m govuk-!-margin-bottom-6">{{ page.subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Metadata section -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full govuk-!-padding-bottom-4">
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-6">
+          {% if page.department %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">From:</dt>
+              <dd class="govuk-summary-list__value">{{ page.department }}</dd>
+            </div>
+          {% endif %}
+          {% if page.published_date %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Published</dt>
+              <dd class="govuk-summary-list__value">{{ page.published_date | date: "%-d %B %Y" }}</dd>
+            </div>
+          {% endif %}
+          {% if page.last_updated %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Last updated</dt>
+              <dd class="govuk-summary-list__value">{{ page.last_updated | date: "%-d %B %Y" }} — <a class="govuk-link" href="#full-publication-update-history">see all updates</a></dd>
+            </div>
+          {% endif %}
+          {% if page.reference_number %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Reference</dt>
+              <dd class="govuk-summary-list__value">{{ page.reference_number }}</dd>
+            </div>
+          {% endif %}
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <!-- Main content column -->
+      <div class="govuk-grid-column-two-thirds">
+        <!-- Summary -->
+        {% if page.summary %}
+          <div class="govuk-govspeak">
+            <div class="govuk-govspeak__section">
+              <h2 class="govuk-heading-l">Summary</h2>
+              {{ page.summary | markdownify }}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Details inset -->
+        {% if page.applies_to or page.contact %}
+          <div class="govuk-inset-text">
+            {% if page.applies_to %}
+              <p class="govuk-body"><strong>Applies to:</strong> {{ page.applies_to }}</p>
+            {% endif %}
+            {% if page.contact %}
+              <p class="govuk-body"><strong>Contact:</strong> {{ page.contact }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <!-- Main body -->
+        <div class="govuk-govspeak govuk-govspeak--l">
+          {{ content }}
+        </div>
+
+        <!-- Authors and acknowledgments -->
+        {% if page.authors or page.acknowledgments %}
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          {% if page.authors %}
+            <h2 class="govuk-heading-m">Authors</h2>
+            <ul class="govuk-list govuk-list--bullet">
+              {% for author in page.authors %}
+                <li>{{ author }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          {% if page.acknowledgments %}
+            <h2 class="govuk-heading-m">Acknowledgments</h2>
+            {{ page.acknowledgments | markdownify }}
+          {% endif %}
+        {% endif %}
+
+        <!-- Update history section (placeholder) -->
+        <div id="full-publication-update-history" class="govuk-!-margin-top-8">
+          <!-- Add update history content if needed -->
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="govuk-grid-column-one-third govuk-!-padding-left-5">
+        <aside class="govuk-!-margin-bottom-5">
+          <!-- Table of contents -->
+          <div class="gem-c-contents-list" aria-label="Contents" role="navigation">
+            <h2 class="govuk-heading-m gem-c-contents-list__title">Contents</h2>
+            <ol class="gem-c-contents-list__list" id="pub-toc">
+              <!-- Populated by JS -->
+            </ol>
+          </div>
+
+          <!-- Download/Print -->
+          {% if page.download_pdf or page.download_docx %}
+            <div class="govuk-!-margin-top-6">
+              <h3 class="govuk-heading-s">Documents</h3>
+              {% if page.download_pdf %}
+                <a href="{{ page.download_pdf }}" class="govuk-button govuk-button--secondary" download>Download PDF</a>
+              {% endif %}
+              {% if page.download_docx %}
+                <a href="{{ page.download_docx }}" class="govuk-button govuk-button--secondary" download>Download Word</a>
+              {% endif %}
+              <button onclick="window.print()" class="govuk-button govuk-button--secondary">Print this page</button>
+            </div>
+          {% endif %}
+
+          <!-- Related publications -->
+          {% if page.related_publications %}
+            <div class="govuk-!-margin-top-6">
+              <h3 class="govuk-heading-s">Related content</h3>
+              <ul class="govuk-list">
+                {% for pub in page.related_publications %}
+                  <li><a class="govuk-link" href="{{ pub.url }}">{{ pub.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </aside>
+      </div>
+    </div>
+
+    <!-- Licence footer -->
+    <div class="govuk-grid-row govuk-!-margin-top-9">
+      <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <p class="govuk-body-s">
+          {{ page.license | default: "© Crown copyright 2025. This publication is licensed under the terms of the Open Government Licence v3.0 except where otherwise stated." }}
+        </p>
+      </div>
+    </div>
+  </main>
+</article>
+
+<script>
+// TOC generation and smooth scroll
+document.addEventListener('DOMContentLoaded', () => {
+  const body = document.querySelector('.govuk-govspeak');
+  const toc = document.getElementById('pub-toc');
+  if (!body || !toc) return;
+
+  const headings = body.querySelectorAll('h2, h3');
+  if (headings.length === 0) return;
+
+  let currentH2 = null;
+  let subOl = null;
+
+  headings.forEach((heading, index) => {
+    if (!heading.id) heading.id = `section-${index}`;
+
+    const li = document.createElement('li');
+    li.className = 'gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed';
+
+    const a = document.createElement('a');
+    a.className = 'gem-c-contents-list__link govuk-link govuk-link--no-underline';
+    a.href = `#${heading.id}`;
+    a.textContent = heading.textContent;
+    li.appendChild(a);
+
+    if (heading.tagName === 'H2') {
+      toc.appendChild(li);
+      currentH2 = li;
+      subOl = null;
+    } else if (heading.tagName === 'H3' && currentH2) {
+      if (!subOl) {
+        subOl = document.createElement('ol');
+        subOl.className = 'gem-c-contents-list__nested-list';
+        currentH2.appendChild(subOl);
+      }
+      subOl.appendChild(li);
+    }
+  });
+
+  // Smooth scrolling
+  toc.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});
+</script>
+
+<style>
+  /* Additional GOV.UK-like styles */
+  .govuk-govspeak { font-size: 19px; line-height: 1.31579; }
+  .gem-c-contents-list__list-item--dashed { list-style-type: none; position: relative; }
+  .gem-c-contents-list__list-item--dashed:before { content: '— '; position: absolute; left: -1em; }
+  @media (min-width: 40.0625em) {
+    .govuk-govspeak { font-size: 19px; line-height: 1.31579; }
+  }
+</style>

@@ -1,0 +1,234 @@
+/* GOV.UK Component Overrides */
+/* Fixes for GOV.UK components to work with custom theme */
+
+/* Notification Banner - ensure white text on blue background */
+.govuk-notification-banner__title {
+  color: #ffffff !important;
+}
+
+/* Ensure notification banner header has proper background */
+.govuk-notification-banner__header {
+  background-color: #1d70b8;
+  padding: 15px 20px;
+}
+
+/* Fix breadcrumb link colors if needed */
+.govuk-breadcrumbs__link {
+  color: #1d70b8;
+}
+
+.govuk-breadcrumbs__link:hover {
+  color: #003078;
+}
+
+/* Ensure button text is readable */
+.govuk-button {
+  color: #ffffff;
+}
+
+.govuk-button:hover {
+  color: #ffffff;
+}
+
+/* Fix summary list styling */
+.govuk-summary-list__key,
+.govuk-summary-list__value {
+  color: #0b0c0c;
+}
+
+/* Ensure details summary is clickable-looking */
+.govuk-details__summary {
+  color: #1d70b8;
+}
+
+.govuk-details__summary:hover {
+  color: #003078;
+}
+
+/* Fix warning text icon - ensure it displays as black circle with white ! */
+.govuk-warning-text {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0;
+}
+
+.govuk-warning-text__icon {
+  color: #ffffff !important;
+  background-color: #0b0c0c !important;
+  border-radius: 50%;
+  font-weight: 700 !important;
+  font-size: 30px !important;
+  line-height: 35px !important;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  margin-right: 10px;
+  flex-shrink: 0;
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+.govuk-warning-text__text {
+  display: block;
+  flex: 1;
+}
+
+/* Ensure tag text is readable with darker, more vibrant colors */
+.govuk-tag {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Default/Blue tags - darker blue */
+.govuk-tag,
+.govuk-tag--blue {
+  background-color: #1d70b8 !important;  /* Darker blue */
+}
+
+/* Green tags - darker green */
+.govuk-tag--green {
+  background-color: #00703c !important;  /* Darker green */
+}
+
+/* Red tags - darker red */
+.govuk-tag--red {
+  background-color: #d4351c !important;  /* Darker red */
+}
+
+/* Yellow/Orange tags - darker orange */
+.govuk-tag--yellow,
+.govuk-tag--orange {
+  background-color: #f47738 !important;  /* Darker orange */
+  color: #ffffff !important;
+}
+
+/* Grey tags - darker grey */
+.govuk-tag--grey {
+  background-color: #505a5f !important;  /* Darker grey */
+}
+
+/* Purple tags - darker purple */
+.govuk-tag--purple {
+  background-color: #4c2c92 !important;  /* Darker purple */
+}
+
+/* Pink tags - darker pink */
+.govuk-tag--pink {
+  background-color: #d53880 !important;  /* Darker pink */
+}
+
+/* Phase banner tag should have white text */
+.govuk-phase-banner__content__tag {
+  color: #ffffff;
+}
+
+/* Fix notification banner link colors */
+.govuk-notification-banner__link {
+  color: #1d70b8;
+  font-weight: 600;
+}
+
+.govuk-notification-banner__link:hover {
+  color: #003078;
+}
+
+/* Checkbox spacing improvements for better alignment */
+.govuk-checkboxes__label {
+  padding-left: 60px !important; /* Much more space between checkbox and title */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Position checkbox further left */
+.govuk-checkboxes__input {
+  left: 0 !important;
+}
+
+/* Ensure checkbox items have proper spacing */
+.govuk-checkboxes__item {
+  margin-bottom: 25px !important;
+  padding: 0 !important;
+  position: relative;
+}
+
+/* Align title and description properly - make title block level */
+.govuk-checkboxes__label strong {
+  display: block !important;
+  margin-bottom: 8px !important;
+  line-height: 1.4;
+  font-size: 19px;
+}
+
+/* Checkbox hints should align with title */
+.govuk-checkboxes__hint {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* GOV.UK Table styling - ensure tables display correctly */
+.govuk-table {
+  width: 100% !important;
+  margin-bottom: 20px !important;
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+  background: transparent !important;
+  border: 1px solid #b1b4b6 !important;
+  font-size: 1rem !important;
+  line-height: 1.25 !important;
+}
+
+@media(min-width: 40.0625em) {
+  .govuk-table {
+    font-size: 1.1875rem !important;
+    line-height: 1.3157894737 !important;
+  }
+}
+
+.govuk-table__header {
+  font-weight: 700 !important;
+  background-color: #f3f2f1 !important;
+  padding: 10px 20px 10px 0 !important;
+  border: 1px solid #b1b4b6 !important;
+  text-align: left !important;
+  color: #0b0c0c !important;
+}
+
+.govuk-table__cell {
+  padding: 10px 20px 10px 0 !important;
+  border-bottom: 1px solid #b1b4b6 !important;
+  text-align: left !important;
+  vertical-align: top !important;
+  background: white !important;
+  color: #0b0c0c !important;
+}
+
+.govuk-table__caption {
+  font-weight: 700 !important;
+  display: table-caption !important;
+  text-align: left !important;
+}
+
+.govuk-table__caption--m {
+  font-size: 1.125rem !important;
+  line-height: 1.1111111111 !important;
+}
+
+@media(min-width: 40.0625em) {
+  .govuk-table__caption--m {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+  }
+}
+
+/* Ensure GOV.UK table rows and cells inherit proper styling */
+.govuk-table__row {
+  border-bottom: 1px solid #b1b4b6 !important;
+}
+
+.govuk-table__head {
+  border-bottom: 1px solid #b1b4b6 !important;
+}
+
+.govuk-table__body .govuk-table__row:hover {
+  background-color: #f3f2f1 !important;
+}

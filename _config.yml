@@ -18,24 +18,39 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Nation of Hverland 
-title_short: Hverland
+title: Minnesota.gov
+title_short: MN.gov
 #email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hverland is a fictional nation created by Peter Grund. This site is 
-  a portal to the world of Hverland, with stories, maps, and other content.
+  Official website for the State of Minnesota. Access government services,
+  information, and resources for residents, businesses, and visitors.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hverland.petermgrund.com"
 #twitter_username: jekyllrb
 github_username:  petermgrund
 
 collections:
+  services:
+    output: true
+    permalink: /services/:title/
+  guidance:
+    output: true
+    permalink: /guidance/:title/
+  departments:
+    output: true
+    permalink: /departments/:title/
+  news:
+    output: true
+    permalink: /news/:year/:month/:day/:title/
   posts:
     output: true
-    permalink: /:categories/:title/
+    permalink: /updates/:categories/:title/
   about:
     output: true
-    permalink: /wiki/:title
+    permalink: /minnesota/:title
+  legal:
+    output: true
+    permalink: /legal/:name/
 
 # Build settings
 theme: minima
@@ -50,14 +65,17 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - package-lock.json
+  - _sass/

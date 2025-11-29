@@ -1,0 +1,84 @@
+---
+layout: default
+---
+<article class="page legal-case">
+
+  <header class="page-header">
+    {% if page.court %}
+    <p class="court-name">{{ page.court }}</p>
+    {% endif %}
+    <h1 class="page-title">{{ page.title | escape }}</h1>
+    {% if page.citation %}
+    <p class="case-citation">{{ page.citation }}</p>
+    {% endif %}
+  </header>
+
+  <div class="page-content">
+    {% if page.date or page.judges or page.outcome %}
+    <div class="case-metadata">
+      {% if page.date %}
+      <p><strong>Date Decided:</strong> {{ page.date | date: "%B %d, %Y" }}</p>
+      {% endif %}
+      {% if page.judges %}
+      <p><strong>Before:</strong> {{ page.judges }}</p>
+      {% endif %}
+      {% if page.outcome %}
+      <p><strong>Disposition:</strong> {{ page.outcome }}</p>
+      {% endif %}
+    </div>
+    <hr>
+    {% endif %}
+
+    {{ content }}
+
+    {% if page.keywords %}
+    <hr>
+    <div class="case-keywords">
+      <p><strong>Index Terms:</strong> {{ page.keywords | join: ', ' }}</p>
+    </div>
+    {% endif %}
+  </div>
+
+</article>
+
+<style>
+.legal-case .court-name {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #505a5f;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.legal-case .case-citation {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #505a5f;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.legal-case .case-metadata {
+  background: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-left: 3px solid #1d70b8;
+}
+
+.legal-case .case-metadata p {
+  margin-bottom: 10px;
+}
+
+.legal-case .case-metadata p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-case .case-keywords {
+  background: #f8f9fa;
+  padding: 20px;
+  margin-top: 30px;
+  border-left: 3px solid #1d70b8;
+}
+</style>
